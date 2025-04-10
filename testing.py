@@ -1,5 +1,11 @@
-print("Hello world")
+import psutil
+import time
 
-1231231231231231231
+def get_cpu_usage():
+    while True:
+        cpu_usage = psutil.cpu_percent(interval=1)
+        print(f"CPU Usage: {cpu_usage}%")
+        time.sleep(1)
 
-print("Hello second time")
+if __name__ == "__main__":
+    get_cpu_usage()
